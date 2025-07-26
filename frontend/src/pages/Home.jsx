@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { 
-  Camera, 
-  MessageCircle, 
-  TrendingUp, 
-  Building2, 
-  Calendar, 
+  Camera,
+  MessageCircle,
+  TrendingUp,
+  Building2,
+  Calendar,
   Plus,
   Cloud,
   CheckCircle
@@ -15,45 +15,11 @@ import { getTranslation } from '../utils/translations';
 
 const Home = () => {
   const { selectedLanguage, selectedCrops, user } = useAppStore();
+  const navigate = useNavigate();
 
-  const quickActions = [
-    {
-      title: 'diagnosePlant',
-      icon: Camera,
-      color: 'bg-red-500',
-      hoverColor: 'hover:bg-red-600',
-      to: '/crop-health',
-      primary: true
-    },
-    {
-      title: 'askQuestion',
-      icon: MessageCircle,
-      color: 'bg-blue-500',
-      hoverColor: 'hover:bg-blue-600',
-      to: '/voice-input'
-    },
-    {
-      title: 'marketPrices',
-      icon: TrendingUp,
-      color: 'bg-green-500',
-      hoverColor: 'hover:bg-green-600',
-      to: '/market'
-    },
-    {
-      title: 'govSchemes',
-      icon: Building2,
-      color: 'bg-purple-500',
-      hoverColor: 'hover:bg-purple-600',
-      to: '/government-schemes'
-    },
-    {
-      title: 'cropCalendar',
-      icon: Calendar,
-      color: 'bg-amber-500',
-      hoverColor: 'hover:bg-amber-600',
-      to: '/crop-calendar'
-    }
-  ];
+  const handleAddCropClick = () => {
+    navigate('/add-crops');
+  };
 
   return (
     <div className="p-6 max-w-7xl mx-auto">
@@ -81,38 +47,12 @@ const Home = () => {
               <p className="text-sm text-gray-600 capitalize">{cropId}</p>
             </div>
           ))}
-          <button className="flex-shrink-0 w-16 h-16 border-2 border-dashed border-primar-300 rounded-full flex items-center justify-center text-primary-500 hover:border-primary-500 hover:bg-primary-50 transition-colors">
+          <button 
+            onClick={handleAddCropClick}
+            className="flex-shrink-0 w-16 h-16 border-2 border-dashed border-primar-300 rounded-full flex items-center justify-center text-primary-500 hover:border-primary-500 hover:bg-primary-50 transition-colors"
+          >
             <Plus className="h-6 w-6" />
           </button>
-        </div>
-      </div>
-
-      {/* Quick Actions */}
-      <div className="mb-8">
-        <h2 className="text-xl font-semibold text-gray-900 mb-4">
-          {getTranslation(selectedLanguage, 'quickActions')}
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {quickActions.map((action, index) => {
-            const Icon = action.icon;
-            return (
-              <Link
-                key={action.title}
-                to={action.to}
-                className={`
-                  ${action.primary ? 'md:col-span-2 lg:col-span-3' : ''}
-                  ${action.color} ${action.hoverColor} text-white p-6 rounded-xl transition-all duration-200 hover:scale-105 hover:shadow-lg
-                `}
-              >
-                <div className={`flex items-center ${action.primary ? 'justify-center' : ''}`}>
-                  <Icon className={`${action.primary ? 'h-8 w-8 mr-3' : 'h-6 w-6 mr-3'}`} />
-                  <span className={`font-semibold ${action.primary ? 'text-lg' : ''}`}>
-                    {getTranslation(selectedLanguage, action.title)}
-                  </span>
-                </div>
-              </Link>
-            );
-          })}
         </div>
       </div>
 

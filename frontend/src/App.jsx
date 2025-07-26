@@ -14,6 +14,7 @@ import MarketPrices from './pages/MarketPrices.jsx';
 import CropCalendar from './pages/CropCalendar.jsx';
 import GovernmentSchemes from './pages/GovernmentSchemes.jsx';
 import PlaceholderScreen from './pages/PlaceholderScreen.jsx';
+import CropSelection from './components/Onboarding/CropSelection.jsx';
 
 function App() {
   const { loading, currentScreen, onboardingCompleted } = useAppStore();
@@ -41,6 +42,9 @@ function App() {
           <Route path="community" element={<PlaceholderScreen title="Community" />} />
           <Route path="profile" element={<PlaceholderScreen title="Profile" />} />
           <Route path="*" element={<Navigate to="/" replace />} />
+          jsx
+<Route path="/add-crops" element={<CropSelection />} />
+
         </Route>
       </Routes>
     </Router>

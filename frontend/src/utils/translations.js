@@ -6,7 +6,7 @@ export const translations = {
     appSubtitle: "AI-Powered Agricultural Assistant",
     
     // Language Selection
-    selectLanguage: "Namaste! Select your Plantix language",
+    selectLanguage: "Namaste! Select your KRISHI language",
     accept: "Accept",
     termsOfUse: "terms of use",
     privacyPolicy: "privacy policy",
@@ -27,7 +27,7 @@ export const translations = {
     allowNotifications: "Allow notifications",
     notificationDesc: "To receive important disease trends, weather alerts and helpful farming tips.",
     allowLocation: "Access to device location",
-    locationDesc: "To provide you with localized content, Plantix needs access to your device's location.",
+    locationDesc: "To provide you with localized content, KRISHI needs access to your device's location.",
     allow: "Allow",
     
     // Farming Type
@@ -45,7 +45,7 @@ export const translations = {
     selectCropsDesc: "Select up to 8 crops you are interested in. You can always change it later.",
     
     // Home Screen
-    plantix: "Plantix",
+    plantix: "KRISHI",
     yourCrops: "Your Crops",
     quickActions: "Quick Actions",
     diagnosePlant: "Diagnose Plant Problem",
@@ -165,7 +165,7 @@ export const translations = {
     // Add Kannada translations here
     appTitle: "ಪ್ರಾಜೆಕ್ಟ್ ಕಿಸಾನ್",
     appSubtitle: "AI-ಚಾಲಿತ ಕೃಷಿ ಸಹಾಯಕ",
-    selectLanguage: "ನಮಸ್ತೆ! ನಿಮ್ಮ Plantix ಭಾಷೆಯನ್ನು ಆಯ್ಕೆ ಮಾಡಿ",
+    selectLanguage: "ನಮಸ್ತೆ! ನಿಮ್ಮ KRISHI ಭಾಷೆಯನ್ನು ಆಯ್ಕೆ ಮಾಡಿ",
     // ... other translations
   },
   
@@ -173,7 +173,7 @@ export const translations = {
     // Add Hindi translations here
     appTitle: "प्रोजेक्ट किसान",
     appSubtitle: "AI-संचालित कृषि सहायक",
-    selectLanguage: "नमस्ते! अपनी Plantix भाषा चुनें",
+    selectLanguage: "नमस्ते! अपनी KRISHI भाषा चुनें",
     // ... other translations
   }
 };

@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import useAppStore from '../../store/appStore';
 import { getTranslation } from '../../utils/translations';
+import { useNavigate } from 'react-router-dom';
 
 const crops = [
   { id: 'tomato', nameKey: 'tomato', emoji: '🍅' },
@@ -17,10 +18,13 @@ const crops = [
   { id: 'grape', nameKey: 'grape', emoji: '🍇' },
 ];
 
-const CropSelection = ({ onNext }) => {
-  const { selectedLanguage, setCrops } = useAppStore();
-  const [selectedCrops, setSelectedCrops] = useState([]);
+// Accept onComplete function
+const CropSelection = ({ onComplete }) => {
+  const { selectedLanguage, selectedCrops: existingCrops, setCrops } = useAppStore();
+  // Initialize selectedCrops state with existingCrops from the store
+  const [selectedCrops, setSelectedCrops] = useState(existingCrops);
   const maxCrops = 8;
+  const navigate = useNavigate();
 
   const toggleCrop = (cropId) => {
     setSelectedCrops(prev => {
@@ -33,9 +37,15 @@ const CropSelection = ({ onNext }) => {
     });
   };
 
-  const handleNext = () => {
+  const handleSave = () => {
+    // Update crops in the store
     setCrops(selectedCrops);
-    onNext();
+    // Navigate back to home or call onComplete
+    if (onComplete) {
+      onComplete();
+    } else {
+      navigate('/');
+    }
   };
 
   return (
@@ -90,7 +100,7 @@ const CropSelection = ({ onNext }) => {
 
         <div className="text-center">
           <button
-            onClick={handleNext}
+            onClick={handleSave}
             disabled={selectedCrops.length === 0}
             className={`
               px-12 py-4 rounded-lg font-semibold text-lg transition-colors duration-200
@@ -100,7 +110,7 @@ const CropSelection = ({ onNext }) => {
               }
             `}
           >
-            {getTranslation(selectedLanguage, 'next')}
+            Save Crops
           </button>
         </div>
       </div>

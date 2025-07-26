@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Home, Users, ShoppingBag, User, Leaf, MessageCircle } from 'lucide-react';
+import { X, Home, Users, ShoppingBag, User, Leaf, MessageCircle, Camera, TrendingUp, Building2, Calendar } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import useAppStore from '../../store/appStore';
 import { getTranslation } from '../../utils/translations';
@@ -13,6 +13,14 @@ const Sidebar = () => {
     { name: 'community', href: '/community', icon: Users },
     { name: 'market', href: '/market', icon: ShoppingBag },
     { name: 'profile', href: '/profile', icon: User },
+  ];
+
+  const quickActions = [
+    { title: 'diagnosePlant', href: '/crop-health', icon: Camera },
+    { title: 'askQuestion', href: '/voice-input', icon: MessageCircle },
+    { title: 'marketPrices', href: '/market', icon: TrendingUp },
+    { title: 'govSchemes', href: '/government-schemes', icon: Building2 },
+    { title: 'cropCalendar', href: '/crop-calendar', icon: Calendar },
   ];
 
   const isActive = (href) => {
@@ -83,26 +91,21 @@ const Sidebar = () => {
             {getTranslation(selectedLanguage, 'quickActions')}
           </h3>
           <ul className="mt-4 space-y-2">
-            <li>
-              <Link
-                to="/crop-health"
-                onClick={() => setSidebarOpen(false)}
-                className="flex items-center px-4 py-2 text-sm text-gray-600 rounded-lg hover:bg-gray-50 hover:text-gray-900"
-              >
-                <MessageCircle className="mr-3 h-4 w-4" />
-                {getTranslation(selectedLanguage, 'diagnosePlant')}
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/voice-input"
-                onClick={() => setSidebarOpen(false)}
-                className="flex items-center px-4 py-2 text-sm text-gray-600 rounded-lg hover:bg-gray-50 hover:text-gray-900"
-              >
-                <MessageCircle className="mr-3 h-4 w-4" />
-                {getTranslation(selectedLanguage, 'askQuestion')}
-              </Link>
-            </li>
+            {quickActions.map((action) => {
+              const Icon = action.icon;
+              return (
+                <li key={action.title}>
+                  <Link
+                    to={action.href}
+                    onClick={() => setSidebarOpen(false)}
+                    className="flex items-center px-4 py-2 text-sm text-gray-600 rounded-lg hover:bg-gray-50 hover:text-gray-900"
+                  >
+                    <Icon className="mr-3 h-4 w-4" />
+                    {getTranslation(selectedLanguage, action.title)}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>
