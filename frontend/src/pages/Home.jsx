@@ -60,7 +60,7 @@ const Home = () => {
       {/* Welcome Section */}
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">
-          Welcome back, Farmer! 👋
+          Welcome back! 👋
         </h1>
         <p className="text-gray-600">
           {getTranslation(selectedLanguage, 'userId')}: {user?.uid?.substring(0, 8) || 'Anonymous'}

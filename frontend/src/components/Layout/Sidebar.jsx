@@ -40,7 +40,7 @@ const Sidebar = () => {
           <div className="flex items-center space-x-2">
             <Leaf className="h-8 w-8 text-green-500" />
             <span className="text-xl font-bold text-gray-900">
-              {getTranslation(selectedLanguage, 'plantix')}
+              {getTranslation(selectedLanguage, 'KRISHI')}
             </span>
           </div>
           <button
