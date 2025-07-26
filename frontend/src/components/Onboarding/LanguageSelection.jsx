@@ -22,7 +22,7 @@ const LanguageSelection = ({ onNext }) => {
     <div className="min-h-screen bg-white flex items-center justify-center p-4">
       <div className="max-w-md w-full">
         <div className="text-center mb-8">
-          <Leaf className="h-16 w-16 text-primary-500 mx-auto mb-4" />
+          <Leaf className="h-16 w-16 text-green-500 mx-auto mb-4" />
           <h1 className="text-2xl font-bold text-gray-900 mb-2">
             {getTranslation(tempLanguage, 'selectLanguage')}
           </h1>
@@ -36,7 +36,7 @@ const LanguageSelection = ({ onNext }) => {
               className={`
                 w-full flex items-center p-4 rounded-lg border-2 transition-all duration-200
                 ${tempLanguage === language.name
-                  ? 'border-primary-500 bg-primary-50'
+                  ? 'border-green-500 bg-green-50'
                   : 'border-gray-200 hover:border-gray-300'
                 }
               `}
@@ -44,18 +44,18 @@ const LanguageSelection = ({ onNext }) => {
               <div className={`
                 w-5 h-5 rounded-full border-2 mr-4 flex items-center justify-center
                 ${tempLanguage === language.name
-                  ? 'border-primary-500'
+                  ? 'border-green-500'
                   : 'border-gray-300'
                 }
               `}>
                 {tempLanguage === language.name && (
-                  <div className="w-2.5 h-2.5 bg-primary-500 rounded-full" />
+                  <div className="w-2.5 h-2.5 bg-green-500 rounded-full" />
                 )}
               </div>
               <span className={`
                 text-left font-medium
                 ${tempLanguage === language.name
-                  ? 'text-primary-700'
+                  ? 'text-green-700'
                   : 'text-gray-700'
                 }
               `}>
@@ -68,11 +68,11 @@ const LanguageSelection = ({ onNext }) => {
         <div className="text-center mb-8">
           <p className="text-sm text-gray-600 leading-relaxed">
             {getTranslation(tempLanguage, 'termsText')}{' '}
-            <span className="text-primary-600 underline cursor-pointer">
+            <span className="text-green-600 underline cursor-pointer">
               {getTranslation(tempLanguage, 'termsOfUse')}
             </span>{' '}
             {getTranslation(tempLanguage, 'and')}{' '}
-            <span className="text-primary-600 underline cursor-pointer">
+            <span className="text-green-600 underline cursor-pointer">
               {getTranslation(tempLanguage, 'privacyPolicy')}
             </span>
           </p>
@@ -80,7 +80,7 @@ const LanguageSelection = ({ onNext }) => {
 
         <button
           onClick={handleAccept}
-          className="w-full btn-primary py-4 text-lg font-semibold"
+          className="w-full btn-green py-4 text-lg font-semibold"
         >
           {getTranslation(tempLanguage, 'accept')}
         </button>

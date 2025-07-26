@@ -80,7 +80,7 @@ const PermissionRequest = ({ type, onNext, onSkip }) => {
           
           <button
             onClick={handleAllow}
-            className="btn-primary px-8 py-3"
+            className="btn-green px-8 py-3"
           >
             {getTranslation(selectedLanguage, 'allow')}
           </button>

@@ -38,7 +38,7 @@ const Sidebar = () => {
       `}>
         <div className="flex items-center justify-between h-16 px-6 border-b border-gray-200">
           <div className="flex items-center space-x-2">
-            <Leaf className="h-8 w-8 text-primary-500" />
+            <Leaf className="h-8 w-8 text-green-500" />
             <span className="text-xl font-bold text-gray-900">
               {getTranslation(selectedLanguage, 'plantix')}
             </span>
@@ -63,7 +63,7 @@ const Sidebar = () => {
                     className={`
                       flex items-center px-4 py-3 text-sm font-medium rounded-lg transition-colors duration-200
                       ${isActive(item.href)
-                        ? 'bg-primary-50 text-primary-700 border-r-2 border-primary-500'
+                        ? 'bg-green-50 text-green-700 border-r-2 border-green-500'
                         : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
                       }
                     `}

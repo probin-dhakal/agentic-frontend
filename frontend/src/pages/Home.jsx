@@ -75,13 +75,13 @@ const Home = () => {
         <div className="flex space-x-4 overflow-x-auto pb-2">
           {selectedCrops.slice(0, 5).map((cropId, index) => (
             <div key={cropId} className="flex-shrink-0 text-center">
-              <div className="w-16 h-16 bg-primary-50 rounded-full flex items-center justify-center mb-2">
+              <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mb-2">
                 <span className="text-2xl">🌱</span>
               </div>
               <p className="text-sm text-gray-600 capitalize">{cropId}</p>
             </div>
           ))}
-          <button className="flex-shrink-0 w-16 h-16 border-2 border-dashed border-primary-300 rounded-full flex items-center justify-center text-primary-500 hover:border-primary-500 hover:bg-primary-50 transition-colors">
+          <button className="flex-shrink-0 w-16 h-16 border-2 border-dashed border-primar-300 rounded-full flex items-center justify-center text-primary-500 hover:border-primary-500 hover:bg-primary-50 transition-colors">
             <Plus className="h-6 w-6" />
           </button>
         </div>

@@ -47,8 +47,8 @@ const Header = () => {
                 ID: {user?.uid?.substring(0, 8) || 'Anonymous'}
               </p>
             </div>
-            <div className="h-8 w-8 bg-primary-100 rounded-full flex items-center justify-center">
-              <span className="text-sm font-medium text-primary-600">F</span>
+            <div className="h-8 w-8 bg-green-100 rounded-full flex items-center justify-center">
+              <span className="text-sm font-medium text-green-600">F</span>
             </div>
           </div>
         </div>
